@@ -34,26 +34,6 @@ MongoClient.connect('mongodb://localhost:27017', function(err, client){
     })
   })
 
-  // // CREATE
-  // server.post('/api/quotes', function(req, res){
-  //   const quotesCollection = db.collection('quotes');
-  //   const quoteToSave = req.body;
-  //
-  //   quotesCollection.save(quoteToSave, function(err, result){
-  //     if (err){
-  //       console.log(err);
-  //       res.status(500);
-  //       res.send();
-  //     }
-  //
-  //     res.status(201);
-  //     res.json(result.ops[0]);
-  //     console.log('Saved to db.');
-  //   })
-  //
-  // })
-
-
   // INDEX
   server.get('/api/bucketList', function(req, res){
     const bucketList = db.collection('bucketList');
@@ -66,22 +46,6 @@ MongoClient.connect('mongodb://localhost:27017', function(err, client){
       res.json(allList);
     })
   })
-
-
-  // // INDEX
-  // server.get('/api/quotes', function(req, res){
-  //   const quotesCollection = db.collection('bucket_list');
-  //   quotesCollection.find().toArray(function(err, allQuotes){
-  //     if (err){
-  //       console.log(err);
-  //       res.status(500);
-  //       res.send();
-  //     }
-  //     res.json(allQuotes);
-  //
-  //   });
-  // })
-
 
 
   server.listen(3000, function(){
