@@ -46,7 +46,19 @@ MongoClient.connect('mongodb://localhost:27017', function(err, client){
       res.json(allList);
     })
   })
+  //DELETE ONE
+  server.delete('/api/bucketList/:id', function(req, res){
+    const bucketList = db.collection('bucketList');
 
+    bucketList.remove({"_id": ObjectID(req.params.id)}, function(err, result){
+      if (err){
+        res.status(500);
+        res.send();
+      }
+      res.status(204);
+      res.send();
+    });
+  })
 
   server.listen(3000, function(){
     console.log("Listening on port 3000");
