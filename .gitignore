@@ -63,6 +63,8 @@ typings/
 # dotenv environment variables file
 .env
 
+#idea
+.idea/workspace.xml
 
 
 # End of https://www.gitignore.io/api/node
