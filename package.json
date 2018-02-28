@@ -1,0 +1,26 @@
+{
+  "name": "bucket_list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongodb": "^3.0.3",
+    "webpack": "^4.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidrawson/wk13d3_Bucket-List.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidrawson/wk13d3_Bucket-List/issues"
+  },
+  "homepage": "https://github.com/davidrawson/wk13d3_Bucket-List#readme"
+}
