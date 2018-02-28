@@ -17,6 +17,70 @@ MongoClient.connect('mongodb://localhost:27017', function(err, client){
   const db = client.db('bucket_list');
   console.log("Connected to db.");
 
+  // CREATE
+  server.post('/api/bucketList', function(req, res){
+    const bucketList = db.collection('bucketList');
+    const itemToSave = req.body;
+
+    bucketList.save(itemToSave, function(err, result){
+      if (err){
+        console.log(err);
+        res.status(500);
+        res.send();
+      }
+      res.status(201);
+      res.json(result.ops[0]);  // I don't know what .ops[0] does.
+      console.log('Saved to db');
+    })
+  })
+
+  // // CREATE
+  // server.post('/api/quotes', function(req, res){
+  //   const quotesCollection = db.collection('quotes');
+  //   const quoteToSave = req.body;
+  //
+  //   quotesCollection.save(quoteToSave, function(err, result){
+  //     if (err){
+  //       console.log(err);
+  //       res.status(500);
+  //       res.send();
+  //     }
+  //
+  //     res.status(201);
+  //     res.json(result.ops[0]);
+  //     console.log('Saved to db.');
+  //   })
+  //
+  // })
+
+
+  // INDEX
+  server.get('/api/bucketList', function(req, res){
+    const bucketList = db.collection('bucketList');
+    bucketList.find().toArray(function(err, allList){
+      if (err){
+        console.log(err);
+        res.status(500);
+        res.send();
+      }
+      res.json(allList);
+    })
+  })
+
+
+  // // INDEX
+  // server.get('/api/quotes', function(req, res){
+  //   const quotesCollection = db.collection('bucket_list');
+  //   quotesCollection.find().toArray(function(err, allQuotes){
+  //     if (err){
+  //       console.log(err);
+  //       res.status(500);
+  //       res.send();
+  //     }
+  //     res.json(allQuotes);
+  //
+  //   });
+  // })
 
 
 
