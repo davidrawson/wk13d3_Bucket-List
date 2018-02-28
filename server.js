@@ -1,4 +1,4 @@
-
+const express = require('express');
 const parser = require('body-parser');
 const server = express();
 const MongoClient = require('mongodb').MongoClient;
@@ -65,4 +65,4 @@ MongoClient.connect('mongodb://localhost:27017', function(err, client){
   });
 
 });
->>>>>>> 4f3f5ddc6167ea141310e9271ba4d6068f6394ed
+

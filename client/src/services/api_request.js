@@ -21,4 +21,3 @@ ApiRequest.prototype.getData = function (url) {
     request.send();
 }
 
-// module.exports = ApiRequest;
